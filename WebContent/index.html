@@ -1,0 +1,23 @@
+<html>
+<meta charset='UTF-8'>
+<title>NewAI Team - Invoice Processing Service</title>
+<body>
+	<h1>NewAI Team - Invoice Processing Service</h1>
+	<h3>Choose a file to upload</h3>
+	<form id="uploadForm" action="http://localhost:8080/invoice-processing/rest/invoice/" method="post" enctype="multipart/form-data">
+		<input name="file" id="filename" type="file" /><br>
+		<input type="text" name="email" size="30" value="thieunguyenhung@gmail.com" placeholder="Email" /><br>
+		<button name="submit" type="submit">Upload</button>
+	</form>
+	
+	<script>
+		var frm = document.getElementById('uploadForm') || null;
+		if(frm) {
+		   frm.action = window.location.href + 'rest/invoice/';
+		}
+		else {
+			console.log('form is null');
+		}
+	</script>
+</body>
+</html>
